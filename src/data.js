@@ -2,8 +2,8 @@ export const SERVICES = [
   {
     id: 'plc',
     label: 'PLC Services',
-    color: '#0b2d9e',
-    gradient: 'linear-gradient(135deg,#0b2d9e,#1a3fbf)',
+    color: '#1da88b',
+    gradient: 'linear-gradient(135deg,#1da88b,#2ec4a5)',
     description: 'Expert industrial automation & PLC solutions for manufacturing excellence.',
     items: [
       { name: 'PLC Programming & Development', icon: '⚙️' },
@@ -23,8 +23,8 @@ export const SERVICES = [
   {
     id: 'digital',
     label: 'Digital Marketing',
-    color: '#f97316',
-    gradient: 'linear-gradient(135deg,#f97316,#f59e0b)',
+    color: '#148a72',
+    gradient: 'linear-gradient(135deg,#148a72,#1da88b)',
     description: 'Data-driven marketing strategies to grow your business online.',
     items: [
       { name: 'Search Engine Optimization (SEO)', icon: '🔎' },
@@ -47,8 +47,8 @@ export const SERVICES = [
   {
     id: 'cctv',
     label: 'CCTV Services',
-    color: '#059669',
-    gradient: 'linear-gradient(135deg,#059669,#10b981)',
+    color: '#0d7a65',
+    gradient: 'linear-gradient(135deg,#0d7a65,#2ec4a5)',
     description: 'Advanced surveillance and security systems for your premises.',
     items: [
       { name: 'CCTV System Installation', icon: '📹' },
@@ -70,8 +70,8 @@ export const SERVICES = [
   {
     id: 'it',
     label: 'IT Services',
-    color: '#7c3aed',
-    gradient: 'linear-gradient(135deg,#7c3aed,#a855f7)',
+    color: '#136e5c',
+    gradient: 'linear-gradient(135deg,#136e5c,#1da88b)',
     description: 'Comprehensive IT development & consulting for digital transformation.',
     items: [
       { name: 'Custom Software Development', icon: '💻' },
@@ -107,7 +107,7 @@ export const TESTIMONIALS = [
     text: 'LSS transformed our manufacturing floor with their PLC automation. Production efficiency jumped by 40% within the first quarter.',
     rating: 5,
     avatar: 'R',
-    color: '#0b2d9e'
+    color: '#1da88b'
   },
   {
     name: 'Priya Sharma',
@@ -115,7 +115,7 @@ export const TESTIMONIALS = [
     text: 'Their digital marketing team doubled our organic traffic in 3 months. The SEO results have been phenomenal for our business.',
     rating: 5,
     avatar: 'P',
-    color: '#f97316'
+    color: '#148a72'
   },
   {
     name: 'Mohammed Ali',
@@ -123,7 +123,7 @@ export const TESTIMONIALS = [
     text: 'The CCTV system design and installation was flawless. Remote monitoring now gives us 24/7 peace of mind for all our locations.',
     rating: 5,
     avatar: 'M',
-    color: '#059669'
+    color: '#0d7a65'
   },
 ];
 

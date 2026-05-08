@@ -26,71 +26,82 @@ const Hero = () => {
   return (
     <section id="home" style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #071e6e 0%, #0b2d9e 50%, #1a3fbf 100%)',
+      background: '#ffffff',
       display: 'flex', alignItems: 'center',
       position: 'relative', overflow: 'hidden',
       paddingTop: 72,
     }}>
-      {/* BG Pattern */}
+      {/* Subtle background pattern */}
       <div style={{
-        position: 'absolute', inset: 0, opacity: 0.06,
-        backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-        backgroundSize: '40px 40px',
+        position: 'absolute', inset: 0, opacity: 0.03,
+        backgroundImage: 'radial-gradient(circle, #2ec4a5 1px, transparent 1px)',
+        backgroundSize: '50px 50px',
       }} />
 
-      {/* Glowing orbs */}
-      <div style={{ position:'absolute', top:'10%', right:'5%', width:400, height:400, borderRadius:'50%', background:'rgba(249,115,22,0.15)', filter:'blur(80px)' }}/>
-      <div style={{ position:'absolute', bottom:'5%', left:'5%', width:300, height:300, borderRadius:'50%', background:'rgba(255,255,255,0.05)', filter:'blur(60px)' }}/>
+      {/* Soft glow orb */}
+      <div style={{ position:'absolute', top:'15%', right:'10%', width:500, height:500, borderRadius:'50%', background:'rgba(46,196,165,0.06)', filter:'blur(100px)' }}/>
+      <div style={{ position:'absolute', bottom:'10%', left:'10%', width:400, height:400, borderRadius:'50%', background:'rgba(46,196,165,0.04)', filter:'blur(80px)' }}/>
 
       <div className="container" style={{ position:'relative', zIndex:2 }}>
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:60, alignItems:'center' }}>
+        <div className="hero-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:60, alignItems:'center' }}>
           {/* Left */}
           <div>
             <div style={{
               display:'inline-flex', alignItems:'center', gap:8,
-              background:'rgba(249,115,22,0.15)', border:'1px solid rgba(249,115,22,0.3)',
+              background:'rgba(46,196,165,0.08)', border:'1px solid rgba(46,196,165,0.15)',
               padding:'8px 18px', borderRadius:50, marginBottom:24,
             }}>
-              <span style={{fontSize:13, color:'#fdba74', fontWeight:600, letterSpacing:'0.05em'}}>
+              <span style={{fontSize:13, color:'#1da88b', fontWeight:600, letterSpacing:'0.04em'}}>
                 🚀 YOUR TRUSTED TECHNOLOGY PARTNER
               </span>
             </div>
 
-            <h1 style={{ fontSize:'clamp(32px,4vw,56px)', fontWeight:900, color:'white', lineHeight:1.15, marginBottom:20 }}>
+            <h1 style={{ 
+              fontSize: 'clamp(28px, 6vw, 54px)', 
+              fontWeight: 900, 
+              color: '#061c3f', 
+              lineHeight: 1.15, 
+              marginBottom: 20,
+              wordBreak: 'break-word'
+            }}>
               Expert Solutions in<br />
-              <span style={{ color:'#f97316' }}>{typed}</span>
-              <span style={{ color:'#f97316', animation:'blink 1s step-end infinite' }}>|</span>
+              <span style={{ color: '#2ec4a5' }}>{typed}</span>
+              <span style={{ color: '#2ec4a5', animation: 'blink 1s step-end infinite' }}>|</span>
             </h1>
 
-            <p style={{ fontSize:18, color:'rgba(255,255,255,0.75)', lineHeight:1.8, marginBottom:36, maxWidth:520 }}>
+            <p style={{ fontSize:'clamp(14px,1.4vw,17px)', color:'#6b7280', lineHeight:1.8, marginBottom:36, maxWidth:520 }}>
               LSS delivers cutting-edge PLC automation, digital marketing, CCTV security, and IT services — empowering businesses to grow faster and operate smarter.
             </p>
 
-            <div style={{ display:'flex', gap:16, flexWrap:'wrap' }}>
-              <a href="#plc" className="btn btn-primary" style={{ fontSize:16, padding:'14px 32px' }}>
+            <div style={{ display:'flex', gap:14, flexWrap:'wrap' }}>
+              <a href="#plc" className="btn btn-primary" style={{
+                fontSize:'clamp(14px,1.2vw,16px)', padding:'14px 32px',
+              }}>
                 Explore Services →
               </a>
-              <a href="#contact" className="btn btn-secondary" style={{ fontSize:16, padding:'14px 32px', background:'transparent', border:'2px solid rgba(255,255,255,0.5)', color:'white' }}>
+              <a href="#contact" className="btn btn-outline" style={{
+                fontSize:'clamp(14px,1.2vw,16px)', padding:'14px 32px',
+              }}>
                 Get Free Consultation
               </a>
             </div>
           </div>
 
           {/* Right – Visual */}
-          <div style={{ display:'flex', justifyContent:'center', alignItems:'center', position:'relative' }}>
+          <div className="hero-visual" style={{ display:'flex', justifyContent:'center', alignItems:'center', position:'relative' }}>
             <div className="animate-float" style={{
-              width:420, height:420, borderRadius:'50%',
-              background:'rgba(255,255,255,0.04)',
-              border:'2px solid rgba(255,255,255,0.08)',
+              width:'clamp(280px,26vw,400px)', height:'clamp(280px,26vw,400px)', borderRadius:'50%',
+              background:'rgba(46,196,165,0.04)',
+              border:'2px solid rgba(46,196,165,0.12)',
               display:'flex', alignItems:'center', justifyContent:'center',
               position:'relative',
             }}>
               <div style={{
-                width:300, height:300, borderRadius:'50%',
-                background:'rgba(255,255,255,0.06)',
-                border:'2px solid rgba(249,115,22,0.3)',
+                width:'clamp(200px,18vw,280px)', height:'clamp(200px,18vw,280px)', borderRadius:'50%',
+                background:'rgba(46,196,165,0.06)',
+                border:'2px solid rgba(46,196,165,0.15)',
                 display:'flex', alignItems:'center', justifyContent:'center',
-                fontSize:120,
+                fontSize:'clamp(60px,7vw,110px)',
               }}>⚙️</div>
 
               {/* Orbiting service icons */}
@@ -99,17 +110,19 @@ const Hero = () => {
                 { icon:'📹', angle:144 }, { icon:'📈', angle:216 }, { icon:'🔧', angle:288 }
               ].map(({ icon, angle }) => {
                 const rad = (angle * Math.PI) / 180;
-                const x = 210 * Math.cos(rad);
-                const y = 210 * Math.sin(rad);
+                const r = 200;
+                const x = r * Math.cos(rad);
+                const y = r * Math.sin(rad);
                 return (
-                  <div key={angle} style={{
+                  <div key={angle} className="orbit-icon" style={{
                     position:'absolute',
-                    left:`calc(50% + ${x}px - 24px)`,
-                    top:`calc(50% + ${y}px - 24px)`,
-                    width:48, height:48, borderRadius:'50%',
-                    background:'white', display:'flex',
+                    left:`calc(50% + ${x}px - 22px)`,
+                    top:`calc(50% + ${y}px - 22px)`,
+                    width:44, height:44, borderRadius:'50%',
+                    background:'#ffffff', display:'flex',
                     alignItems:'center', justifyContent:'center',
-                    fontSize:22, boxShadow:'0 4px 16px rgba(0,0,0,0.2)',
+                    fontSize:20, boxShadow:'0 4px 16px rgba(0,0,0,0.08)',
+                    border: '1px solid #e5e7eb',
                   }}>{icon}</div>
                 );
               })}
@@ -119,9 +132,19 @@ const Hero = () => {
       </div>
       <style>{`
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-        @media(max-width:768px) {
-          #home > .container > div { grid-template-columns: 1fr !important; }
-          #home > .container > div > div:last-child { display: none !important; }
+        @media(max-width:900px) {
+          .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+          .hero-grid > div:first-child { display: flex; flex-direction: column; align-items: center; }
+          .hero-grid > div:first-child p { max-width: 100% !important; }
+          .hero-visual { margin-top: 20px; }
+        }
+        @media(max-width:600px) {
+          .hero-visual { display: none !important; }
+          #home { min-height: auto !important; padding-top: 100px !important; padding-bottom: 60px !important; }
+        }
+        @media(max-width:500px) {
+          .hero-grid > div:first-child > div:last-child { flex-direction: column; width: 100%; }
+          .hero-grid > div:first-child > div:last-child a { width: 100%; justify-content: center; }
         }
       `}</style>
     </section>

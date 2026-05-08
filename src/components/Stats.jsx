@@ -20,11 +20,13 @@ const useCounter = (target, started) => {
 const StatItem = ({ stat, started }) => {
   const count = useCounter(stat.value, started);
   return (
-    <div style={{ textAlign: 'center', flex: 1, padding: '30px 20px', borderRight: '1px solid rgba(255,255,255,0.1)' }}>
-      <div style={{ fontSize: 48, fontWeight: 900, color: '#f97316', lineHeight: 1 }}>
+    <div className="stat-item" style={{
+      textAlign: 'center', flex: 1, padding: '36px 20px',
+    }}>
+      <div style={{ fontSize: 'clamp(32px,4vw,48px)', fontWeight: 900, color: '#2ec4a5', lineHeight: 1 }}>
         {count}{stat.suffix}
       </div>
-      <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginTop: 8, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+      <div style={{ fontSize: 'clamp(11px,1.1vw,14px)', color: '#6b7280', marginTop: 10, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
         {stat.label}
       </div>
     </div>
@@ -42,9 +44,14 @@ const Stats = () => {
   }, []);
 
   return (
-    <section ref={ref} style={{ background: 'linear-gradient(135deg,#071e6e,#0b2d9e)', padding: '0' }}>
+    <section ref={ref} style={{
+      background: '#ffffff',
+      borderTop: '1px solid #e5e7eb',
+      borderBottom: '1px solid #e5e7eb',
+      padding: 0,
+    }}>
       <div className="container">
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div className="stats-flex" style={{ display: 'flex', flexWrap: 'wrap' }}>
           {STATS.map((s, i) => (
             <StatItem key={i} stat={s} started={started} />
           ))}
@@ -52,7 +59,14 @@ const Stats = () => {
       </div>
       <style>{`
         @media(max-width:600px) {
-          section[style*='071e6e'] .container > div > div { flex: 0 0 50%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+          .stats-flex > .stat-item {
+            flex: 0 0 50% !important;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px 16px !important;
+          }
+        }
+        @media(max-width:380px) {
+          .stats-flex > .stat-item { flex: 0 0 100% !important; }
         }
       `}</style>
     </section>

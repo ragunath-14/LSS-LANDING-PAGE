@@ -35,16 +35,18 @@ function App() {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         title="Back to Top"
+        className="back-to-top"
         style={{
-          position: 'fixed', bottom: 30, left: 30,
-          width: 44, height: 44, borderRadius: '50%',
-          background: '#0b2d9e', color: 'white',
-          border: 'none', cursor: 'pointer', fontSize: 18,
-          boxShadow: '0 4px 16px rgba(11,45,158,0.4)',
+          position: 'fixed', bottom: 24, left: 20,
+          width: 40, height: 40, borderRadius: '50%',
+          background: '#ffffff', color: '#2ec4a5',
+          border: '1px solid #e5e7eb', cursor: 'pointer', fontSize: 16,
+          boxShadow: '0 2px 10px rgba(0,0,0,0.08)',
           zIndex: 1000, transition: 'all 0.3s',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}
-        onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-3px)'}
-        onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+        onMouseEnter={e => { e.currentTarget.style.background = '#2ec4a5'; e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.borderColor = '#2ec4a5'; }}
+        onMouseLeave={e => { e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.color = '#2ec4a5'; e.currentTarget.style.borderColor = '#e5e7eb'; }}
       >↑</button>
     </>
   );
